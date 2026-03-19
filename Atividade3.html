@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<header style="text-align: center;">
+    <meta charset ="UTF-8"/>
+    <title>  Privacidade e CyberSegurança
+    </title>
+    <h1>
+       <strong> Privacidade e CyberSegurança </strong>
+    </h1>
+    <link rel="stylesheet" href="Atividade3.css">
+
+</header>
+
+<body>
+    <div class="container">
+    <div class="card">
+        <br>
+        <br>
+
+        <h1>O que é o <strong>OAuth</strong>?</h1>
+        <p> O OAuth é um protocolo aberto que permite o acesso seguro em aplicativos e APIs que precisam lidar com dados sigilosos sem expor a senha do utilizador.
+<p>Antigamente, para que o Facebook tivesse acesso aos contatos de seus usuários para encontrar amigos, por exemplo, ele solicitava a senha do e-mail diretamente. Isso deixava as credenciais vulneráveis e permitia que os desenvolvedores tivessem acesso irrestrito às contas. O OAuth foi criado justamente para solucionar esse problema.
+</p>
+    <p>Na maioria das plataformas atuais, no momento do cadastro, é comum haver a opção de "Fazer login com o Google". Isso é o OAuth em funcionamento: acessamos a plataforma sem a necessidade de criar uma nova senha, escolhendo exatamente quais dados poderão ser compartilhados.</p>
+</p>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h1>O que é <strong>JWT</strong>?</h1>
+        <p>O JWT (JSON Web Token) é um padrão aberto utilizado para transmitir informações entre partes de forma segura, compacta e autossuficiente. Sua principal característica é a dispensa do armazenamento de sessões no servidor.
+
+<p>O fluxo de funcionamento é o seguinte:</p>
+
+<ol>
+
+<li>O usuário realiza o login no servidor enviando suas credenciais.</li>
+
+<li>O servidor valida os dados, gera um token JWT e o envia de volta ao usuário.</li>
+
+<li>A partir desse momento, toda requisição feita pelo usuário será acompanhada desse token, em vez de suas credenciais diretas (como usuário e senha).
+</li>
+    <li>O servidor apenas verifica a assinatura da chave gerada para autorizar o acesso.</li>
+</ol>
+
+Com essa abordagem, o servidor poupa memória e recursos, pois não precisa manter um estado (sessão) ativo para cada usuário. Por ser stateless (sem estado), o JWT é a escolha ideal para arquiteturas de microsserviços e APIs modernas.</p>
+    
+</div>
+
+<div class="card">
+    <br>
+
+    <h1>O que é <strong>XSS (Cross-Site Scripting)</strong>?</h1>
+    <p>
+        O XSS (Cross-Site Scripting) é um tipo de vulnerabilidade de sistema no qual um atacante é capaz de inserir códigos maliciosos em sites e aplicativos web. Diferente de outros ataques, ele é executado completamente do lado do cliente (client-side), ou seja, no navegador do usuário, sem necessidade de execução direta pelo lado do servidor.
+        </p><p>
+O ataque ocorre quando algum campo de entrada de dados (como um formulário ou parâmetro na URL) aceita e executa um conteúdo de forma unilateral, tratando o dado como um script (geralmente JavaScript) em vez de uma simples string. Assim, o atacante consegue injetar um código malicioso capaz de interceptar dados de clientes, como cookies e tokens de sessão, ou até instalar malwares.
+    </p>
+</div>
+
+</div>
+
+</body>
+
+<footer>
+ <p></p>
+</footer>
