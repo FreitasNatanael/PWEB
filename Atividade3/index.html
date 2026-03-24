@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<header style="text-align: center;">
+    <meta charset ="UTF-8"/>
+    <title>  Privacidade e CyberSegurança
+    </title>
+    <h1>
+       <strong> Privacidade e CyberSegurança </strong>
+    </h1>
+    <link rel="stylesheet" href="style.css">
+
+</header>
+
+<body>
+    
+    <div class="container">
+    <div class="card">
+        <h1>O que é o <strong>OAuth</strong>?</h1>
+        <p> O OAuth é um protocolo aberto que permite o acesso seguro em aplicativos e APIs que precisam lidar com dados sigilosos sem expor a senha do utilizador.
+<p>Antigamente, para que o Facebook tivesse acesso aos contatos de seus usuários para encontrar amigos, por exemplo, ele solicitava a senha do e-mail diretamente. Isso deixava as credenciais vulneráveis e permitia que os desenvolvedores tivessem acesso irrestrito às contas. O OAuth foi criado justamente para solucionar esse problema.
+</p>
+    <p>Na maioria das plataformas atuais, no momento do cadastro, é comum haver a opção de "Fazer login com o Google". Isso é o OAuth em funcionamento: acessamos a plataforma sem a necessidade de criar uma nova senha, escolhendo exatamente quais dados poderão ser compartilhados.</p>
+</p>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h1>O que é <strong>JWT</strong>?</h1>
+        <p>O JWT (JSON Web Token) é um padrão aberto utilizado para transmitir informações entre partes de forma segura, compacta e autossuficiente. Sua principal característica é a dispensa do armazenamento de sessões no servidor.
+
+<p>O fluxo de funcionamento é o seguinte:</p>
+
+<ol>
+
+<li>O usuário realiza o login no servidor enviando suas credenciais.</li>
+<br>
+<li>O servidor valida os dados, gera um token JWT e o envia de volta ao usuário.</li>
+<br>
+<li>A partir desse momento, toda requisição feita pelo usuário será acompanhada desse token, em vez de suas credenciais diretas (como usuário e senha).
+</li><br>
+    <li>O servidor apenas verifica a assinatura da chave gerada para autorizar o acesso.</li>
+</ol>
+
+Com essa abordagem, o servidor poupa memória e recursos, pois não precisa manter um estado (sessão) ativo para cada usuário. Por ser stateless (sem estado), o JWT é a escolha ideal para arquiteturas de microsserviços e APIs modernas.</p>
+    
+</div>
+
+<div class="card">
+    <br>
+
+    <h1>O que é <strong>XSS (Cross-Site Scripting)</strong>?</h1>
+    <p>
+        O XSS (Cross-Site Scripting) é um tipo de vulnerabilidade de sistema no qual um atacante é capaz de inserir códigos maliciosos em sites e aplicativos web. Diferente de outros ataques, ele é executado completamente do lado do cliente (client-side), ou seja, no navegador do usuário, sem necessidade de execução direta pelo lado do servidor.
+        </p><p>
+    O ataque ocorre quando algum campo de entrada de dados (como um formulário ou parâmetro na URL) aceita e executa um conteúdo de forma unilateral, tratando o dado como um script (geralmente JavaScript) em vez de uma simples string. Assim, o atacante consegue injetar um código malicioso capaz de interceptar dados de clientes, como cookies e tokens de sessão, ou até instalar malwares.
+    </p>
+
+    <p>
+        <h2>Como mitigar o XSS?</h2>
+        <ul>
+    <p>A regra de ouro para prevenir essa vulnerabilidade é nunca confiar no que o usuário digita. <p>Algumas das principais estratégias incluem:
+    </p></p>
+    <br>
+    <li>Sanitização de Input: Garantir que qualquer entrada do usuário seja transformada em texto puro (escape), impedindo que o navegador a interprete como código.
+    </li><br>
+    <li>Content Security Policy (CSP): Configurar políticas de segurança que restrinjam quais scripts podem ser executados na página.
+    </li><br>
+    <li>Boas Práticas de Sessão: Implementar a detecção de múltiplos logins simultâneos e invalidar sessões suspeitas para proteger os usuários.
+    </li>
+        </ul>
+
+</p>
+
+</div>
+
+ <div class="card">
+    <h1> O que é <strong>CSRF (Cross-Site Request Forgery)</strong>?</h1>
+
+O CSRF é um ataque que "sequestra" a sessão do usuário para realizar ações indesejadas em seu nome. Imagine que você está logado no site do seu banco e, ao clicar em um link malicioso em outra aba, esse link envia um comando invisível para transferir dinheiro da sua conta. Como você já está autenticado, o servidor do banco processa a ordem achando que ela partiu de você.
+
+<h2>Como mitigá-lo com o <strong>CSRF Token</strong>?</h2>
+
+A principal forma de evitar isso é através do CSRF Token. Em vez de o servidor aceitar uma transferência apenas com os dados comuns (como valor e chave Pix), ele exige um código único e gigante gerado no momento em que a página é aberta.
+<p>Como funciona a proteção:</p>
+
+<ul>
+    <li> Chave Temporária: Toda vez que o servidor é acessado, ele gera um número impossível de ser descoberto e o envia para o navegador.
+  </li>
+    <br> <li> Validação Única: Quando você clica em "enviar", o servidor só processa a ação se esse código único estiver presente na requisição.
+  </li>
+    <br> <li> Bloqueio do Atacante: Se um invasor tentar realizar um ataque malicioso, ele não conseguirá utilizar o seu código, pois cada ação exige esse token exclusivo fornecido pelo próprio servidor. Se ele tentar usar um código antigo ou um valor qualquer, a operação não funcionará.
+  </li>      
+</ul>
+
+ </div>
+
+ <div class="card">
+    <h1>O que é <strong>SEO</strong> e como ele funciona</h1>
+    <p>O SEO (Search Engine Optimization) é o conjunto de técnicas para otimizar o posicionamento de um site em mecanismos de pesquisa como Google, Bing e Yahoo.
+Na prática, especialmente na programação, o site deve ser estruturado com o máximo de informações relevantes por meio de palavras-chave voltadas ao nicho desejado. Isso é fundamental porque os usuários costumam realizar buscas utilizando termos específicos em vez de frases longas.</p>
+    <h2>Práticas Fundamentais:</h2>
+    <ul>
+    
+     <li>Texto no Código-Fonte: Evite inserir textos importantes dentro de imagens. O conteúdo deve estar escrito diretamente no código-fonte para que os mecanismos de pesquisa identifiquem as palavras-chave e indexem a página corretamente.</li>
+    <br> <li>Acessibilidade e Legendas: Utilizar legendas e textos alternativos em imagens é indispensável. Essa prática facilita a navegação de pessoas com deficiência e fornece dados contextuais que ajudam os mecanismos de pesquisa a compreenderem o conteúdo da mídia. </li>
+    </ul>
+
+</div>
+
+
+</div>
+
+</body>
+
+<footer>
+ <p>Todos os direitos reservados. Autor: <u>Natanael de Freitas</u></p>
+</footer>
