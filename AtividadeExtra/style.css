@@ -1,0 +1,27 @@
+header{
+    margin-top: 50px ;
+    font-family: MetroGothic, Gotham, "Segoe UI", Tahoma;
+    text-align: center;
+ 
+}
+body{
+    font-family: MetroGothic, Gotham, "Segoe UI", Tahoma;
+    text-align: center;
+    background-image: url(./background.jpg) ;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
+   
+}
+
+
+body h2{
+    margin-top: 60px;
+    
+}
+footer{
+    margin-top: 150px;
+    text-align: center;
+}
