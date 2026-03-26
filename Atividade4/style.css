@@ -1,0 +1,73 @@
+body{
+   
+    color: white;
+    padding: 0px;
+}
+.container-box {
+
+    font-family: "Gotham", "Segoe UI";
+    display: grid;
+    grid-gap:10px;
+    grid-template-columns:auto;
+    grid-template-rows:50px 100px 150px;
+    grid-template-areas:
+    'a b d d'
+    'a b d d'
+    'a b d d'
+    'a e f f'
+    'a e f f';
+
+}
+
+
+header{
+
+    font-family: "Gotham", "Segoe UI";
+    color: black;
+    text-align: center;
+    margin-top: 0% ;
+    padding: 0;
+}
+
+.box {
+ background-color:rgb(122, 12, 54);
+ border-radius: 5px;
+}
+.container-box p{
+    font-size: 16px;
+    font-weight: bold;
+    font-family: Gotham, "Segoe UI";
+}
+.a {
+
+    grid-area: a;
+    text-align: center;
+
+}
+.a img {
+    width: 270px ;
+    height: 500px ;
+}
+.b {
+    grid-area: b;
+    text-align: center;
+}
+
+.d {
+    grid-area: d;
+    text-align: center;
+}
+.e {
+    grid-area: e;
+    text-align: center;
+}
+.f {
+    grid-area: f;
+    text-align: center;
+}
+
+footer{
+    margin-top: 30px;
+    text-align: center;
+    color: black;
+}
