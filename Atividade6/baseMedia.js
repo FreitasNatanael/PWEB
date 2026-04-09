@@ -6,5 +6,5 @@ nota4=parseFloat(prompt("nota 4:"));
 media= (nota1+nota2+nota3+nota4) / 4;
 
 alert("Nome do aluno: " + nome +
-    "\n Media do aluno: " + media);
+    "\n Media do aluno: " + media.toFixed(2));
 
