@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade14</title>
+</head>
+<body>
+
+        <form id="Formulario">
+
+        <input type="input" id="campoInput" name="campoInput" style="width: 400px">
+
+  <input type="radio" id="UpperCase" name="radio" onclick="mudarCase(1)">
+  <label for="UpperCase">Maiúscula</label>
+
+    <input type="radio" id="LowerCase" name="radio" onclick="mudarCase(0)">
+  <label for="LowerCase">Minúscula</label>
+    
+</body>
+<script>
+function mudarCase(modo){
+    if(modo==0){
+        document.getElementById("campoInput").value=document.getElementById("campoInput").value.toLowerCase();
+    }if(modo==1){
+        document.getElementById("campoInput").value=document.getElementById("campoInput").value.toUpperCase();
+    }
+
+
+}
+</script>
+</html>
