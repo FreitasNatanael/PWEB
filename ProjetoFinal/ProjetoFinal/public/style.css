@@ -1,0 +1,336 @@
+/* corpo da pagina e fonte padrao */
+body {
+    background-color: #e9ecef; 
+    color: #535353;
+    padding: 2rem;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+/* titulo la em cima */
+header {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2em;
+    margin-bottom: 2rem;
+}
+
+/* segura todas as colunas lado a lado */
+.quadro-kanban {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* estilo base pras 3 colunas, evita repetir o mesmo codigo toda hora */
+.coluna-kanban1, 
+.coluna-kanban2, 
+.coluna-kanban3 {
+    border-radius: 8px;
+    width: 30%;
+    height: 75vh; /* limita a altura pra ativar a barra de rolagem */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* scroll vertical automatico */
+    overflow-x: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    padding-bottom: 20px;
+}
+
+/* cores individuais de cada coluna */
+.coluna-kanban1 {
+    background-color: #fddede;
+    border-top: 4px solid #ff6b6b;
+}
+
+.coluna-kanban2 {
+    background-color: #fcf8d2;
+    border-top: 4px solid #feca57;
+}
+
+.coluna-kanban3 {
+    background-color: #b8ffde;
+    border-top: 4px solid #1dd1a1;
+}
+
+/* estiliza a barrinha de scroll pra ficar fininha e suave */
+.coluna-kanban1::-webkit-scrollbar,
+.coluna-kanban2::-webkit-scrollbar,
+.coluna-kanban3::-webkit-scrollbar {
+    width: 8px;
+}
+
+.coluna-kanban1::-webkit-scrollbar-thumb,
+.coluna-kanban2::-webkit-scrollbar-thumb,
+.coluna-kanban3::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+/* gruda os titulos no topo mesmo quando der scroll pra baixo */
+/* estilo base pras 3 colunas */
+.coluna-kanban1, 
+.coluna-kanban2, 
+.coluna-kanban3 {
+    border-radius: 8px;
+    width: 30%;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll; /* mudei de auto pra scroll pra barrinha sempre aparecer */
+    overflow-x: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    padding-bottom: 20px;
+}
+
+/* cores individuais de cada coluna */
+.coluna-kanban1 {
+    background-color: #fddede;
+    border-top: 4px solid #ff6b6b;
+}
+
+.coluna-kanban2 {
+    background-color: #fcf8d2;
+    border-top: 4px solid #feca57;
+}
+
+.coluna-kanban3 {
+    background-color: #b8ffde;
+    border-top: 4px solid #1dd1a1;
+}
+
+/* estiliza a barrinha de scroll */
+.coluna-kanban1::-webkit-scrollbar,
+.coluna-kanban2::-webkit-scrollbar,
+.coluna-kanban3::-webkit-scrollbar {
+    width: 8px;
+}
+
+.coluna-kanban1::-webkit-scrollbar-thumb,
+.coluna-kanban2::-webkit-scrollbar-thumb,
+.coluna-kanban3::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 10px;
+}
+
+/* padroniza o tamanho exato do texto pra todos os h2 das colunas */
+.cabecalho-coluna h2, 
+.coluna-kanban2 h2, 
+.coluna-kanban3 h2 {
+    font-size: 16px;
+    margin: 0;
+    font-weight: bold;
+}
+
+/* gruda o cabecalho da primeira coluna no topo */
+.cabecalho-coluna {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 20px;
+    background-color: #fddede;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+/* gruda os titulos das outras colunas no topo tambem e aplica as cores */
+.coluna-kanban2 h2, 
+.coluna-kanban3 h2 {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 20px;
+    text-align: left;
+}
+
+.coluna-kanban2 h2 { background-color: #fcf8d2; }
+.coluna-kanban3 h2 { background-color: #b8ffde; }
+
+/* botao redondo de mais pra criar card */
+.btn-adicionar {
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* tela escura atras do modal de criacao */
+.popup {
+    display: none; /* fica sumido por padrao */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* caixinha branca do formulario */
+.conteudo {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.63);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* xzinho pra fechar o modal */
+.fechar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+    font-weight: bold;
+}
+
+/* organiza os inputs um embaixo do outro */
+#form-novo-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+/* padroniza a cara de todos os campos pra digitacao */
+#form-novo-card input, 
+#form-novo-card textarea, 
+#form-novo-card select {
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+}
+
+/* botao de salvar do formulario */
+.btn-salvar {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.btn-salvar:hover {
+    background-color: #555;
+}
+
+/* estilo da caixinha do card em si */
+.card {
+    width: 80%;
+    align-self: center;
+    background-color: rgba(255, 255, 255, 0.6); 
+    backdrop-filter: blur(6px); 
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    cursor: grab; /* luvinha indicando que da pra arrastar */
+    border: 1px solid #d1d5db;
+    border-left: 5px solid #6c757d; 
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: 0.2s;
+}
+
+/* parte de cima do card (texto e botoes) */
+.card-title {
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;
+}
+
+.card-title h3 {
+    margin: 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+/* descricao do card */
+.card p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+    text-align: left;
+}
+
+/* empilha os botoes de x e lapis pra ficarem certinhos */
+.card-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+/* visual limpo pros botoes do card */
+.close-btn, .edit-btn {
+    background: transparent;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* aumenta so o tamanho do xzinho */
+.close-btn {
+    font-size: 24px; 
+    line-height: 1; /* pra nao desalinhar os botoes */
+}
+
+/* mantem o lapis num tamanho normal */
+.edit-btn {
+    font-size: 16px; 
+    margin-top: 2px;
+}
+
+.close-btn:hover { color: red; }
+.edit-btn:hover { color: #0984e3; }
+
+/* area das tags coloridinhas */
+.card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.tag {
+    background-color: #e2e8f0;
+    color: #475569;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* rodape do card com data e responsavel */
+.card-detalhes {
+    display: flex;
+    justify-content: flex-start;
+    gap: 15px;
+    margin-top: 10px;
+    border-top: 1px dashed #ccc; 
+    padding-top: 8px;
+    font-size: 11px;
+    color: #888;
+}

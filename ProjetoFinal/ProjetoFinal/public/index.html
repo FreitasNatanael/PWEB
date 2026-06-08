@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjetoFinal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>Planejamento de estudos</header>
+
+<div class="quadro-kanban">
+        
+        
+        <div class="coluna-kanban1">
+            <div class="cabecalho-coluna">
+                <h2>Conteúdo para estudar</h2>
+                <button class="btn-adicionar">+</button>
+            </div>
+            
+        </div>
+
+       
+        <div class="coluna-kanban2">
+            <h2>Em progresso</h2>
+        </div> 
+
+        
+        <div class="coluna-kanban3">
+            <h2>Concluído</h2>
+        </div> 
+
+    </div> 
+
+
+    <!--adiciona novo card-->
+    <div id="novo-card" class="popup">
+        <div class="conteudo">
+            <span class="fechar">&times;</span>
+            <h2>Novo Card de Estudo</h2>
+            
+            <form id="form-novo-card">
+                <input type="text" id="titulo" placeholder="Título" required>
+                <textarea id="descricao" name="descricao" placeholder="Digite a descrição"></textarea>
+                <label for="prioridade">Prioridade:</label>
+<select name="prioridade" id="prioridade">
+    <option value="baixa">Baixa</option>
+    <option value="media">Média</option>
+    <option value="alta">Alta</option>
+    <option value="urgente">Urgente</option>
+</select>
+                 <input type="text" id="tags" placeholder="Tags separadas por vírgula">
+                 <label for="vencimento">Data de Vencimento</label>
+                 <input type="date" id="vencimento" placeholder="vencimento">
+                 <input type="text" id="responsaveis" placeholder="Responsáveis">
+                 
+                <button type="submit" class="btn-salvar">Adicionar Card</button>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
